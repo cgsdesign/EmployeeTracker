@@ -10,10 +10,24 @@ const inquirer = require('inquirer');
     //Update Employee Manager
         //Who is their new Manger?
 
-// const prompts= function (){
-// }
 
-//Make Manager
+//----------------------------------------//
+//------------Secondary Prompts----------//
+//--------------------------------------//
+
+const promptRole = function() {
+}
+
+const promptDepartment = function() {
+}
+
+const promptManager = function() {
+}
+
+
+//----------------------------------------//
+//------------Primary Prompt-------------//
+//--------------------------------------//
 const promptMe = function() {
     inquirer
     .prompt({
@@ -53,22 +67,22 @@ const promptMe = function() {
             }
             else if (action=='View All Roles') {
                 console.log('you selected View All Roles');
-                //viewEmp;
+                //viewRole();
                 return
             }
             else if (action=='View All Employees') {
                 console.log('you selected View All Employees');
-                //viewEmp;
+                //viewEmp();
                 return
             }
             else if (action=='View Employees by Department') {
                 console.log('you selected View Employees by Department');
-                //viewEmp;
+                //viewEmpByDept(promptDepartment());
                 return
             }
             else if (action=='View Employees By Manager') {
                 console.log('you selected View Employees By Manager');
-                //viewByMng(askManager());
+                //viewByMng(promptManager());
                 return//
             }
             else if (action =='Add Employee'){
@@ -78,22 +92,25 @@ const promptMe = function() {
             }
             else if (action =='Add Role'){
                 console.log('you selected Add Role');
-                //addEmployee();
+                //addRole();
                 return;
             }
             else if (action =='Add Department'){
                 console.log('you selected Add Department');
-                //addEmployee();
+                //addDepartment();
                 return;
             }
             else if  (action=='Remove Employee') {
                 console.log('you selected Remove Employee');
-                //removeEmployee();
+                //removeEmployee(); 
+                        //get all employees and turn into checklist
+                        //OR they mst know employee id
                 return;
             }
             else if (action== 'Update Employee Role') {
                 console.log('you selected Update Employee Role');
-                //updateEmployee();
+                //updateEmployee(promptRole());
+                    //get roles > feed into checkbox > update info
                 return;
             }
             console.log('An error has occured...restart')
