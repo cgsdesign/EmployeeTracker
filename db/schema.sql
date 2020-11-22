@@ -1,6 +1,4 @@
-CREATE DATABASE company_db;
-USE company_db;
-
+CREATE DATABASE [IF NOT EXISTS] company_db
 
 DROP TABLE IF EXISTS departments;
 DROP TABLE IF EXISTS roles;

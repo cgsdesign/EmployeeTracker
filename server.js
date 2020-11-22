@@ -2,7 +2,7 @@
 require('dotenv').config()
 const mysql = require('mysql2');
 const inquirer = require('inquirer');
-const {addEmployee, addRole, addDepartment,removeEmployee, testHookups} = require('./lib/addRemove');
+const {addEmployee, addRole, addDepartment,removeEmployee, testHookups} = require('./lib/addRemoveSee');
 const promptMe = require('./lib/prompt');
 //const prompts = require('./scripts/prompts.js');
 
@@ -33,5 +33,9 @@ const promptMe = require('./lib/prompt');
 //     console.log(fields); // fields contains extra meta data about results, if available
 //   }
 // );
-
+const refresh = function(){
+  promptMe()
+}
 promptMe()
+
+module.exports = refresh
