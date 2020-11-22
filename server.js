@@ -2,7 +2,8 @@
 require('dotenv').config()
 const mysql = require('mysql2');
 const inquirer = require('inquirer');
-const promptMe = require('./scripts/prompt')
+const {addEmployee, addRole, addDepartment,removeEmployee, testHookups} = require('./lib/addRemove');
+const promptMe = require('./lib/prompt');
 //const prompts = require('./scripts/prompts.js');
 
 // const db = require('db')
