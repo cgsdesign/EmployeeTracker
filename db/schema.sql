@@ -1,13 +1,12 @@
-CREATE DATABASE [IF NOT EXISTS] company_db
+CREATE DATABASE IF NOT EXISTS company_db;
 
-DROP TABLE IF EXISTS departments;
-DROP TABLE IF EXISTS roles;
-DROP TABLE IF EXISTS employees;
+
+DROP TABLE IF EXISTS roles, departments, employees;
 
 
 CREATE TABLE departments (
     id INTEGER(10) AUTO_INCREMENT NOT NULL,
-    name VARCHAR(30),
+    department_name VARCHAR(30),
     PRIMARY KEY (id)
 );
 

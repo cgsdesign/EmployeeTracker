@@ -1,7 +1,10 @@
 USE company_db;
+/*
+mysql -u root -p
+source db/schema.sql*/
 /*above says which db using/going into*/
 
-INSERT INTO departments (name)
+INSERT INTO departments (department_name)
 VALUE
 ('engineering'),
 ('legal'),
@@ -10,13 +13,13 @@ VALUE
 
 INSERT INTO roles (title, salary, department_id)
 VALUE
-('MANAGER', '50000', 1),
+('Engineering Manager', '50000', 1),
 ('Engineer', '40000', 1),
 ('Sr Engineer', '60000', 1),
-('MANAGER','50000', 2),
+('Legal Manager','50000', 2),
 ('lawyer', '20000', 2),
 ('Secretary', '20000', 2),
-('MANAGER','50000', 3),
+('Custodial Manager','50000', 3),
 ('Cleaner', '20000', 3),
 ('Sweeper', '20000', 3)
 ;
