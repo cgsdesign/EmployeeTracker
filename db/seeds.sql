@@ -26,16 +26,16 @@ VALUE
 
 INSERT INTO employees (first_name, last_name, role_id, manager_id)
 VALUE
-('CAT', 'Striker', 1, 1),
+('CAT', 'Striker', 1, null),
 ('Katsu', 'Calli', 2, 1),
 ('John', 'Doe', 2, 1),
 ('Manna','May', 3, 1),
-('FRANK', 'Fran', 4, 2),
-('Mighty', 'Marlin', 5, 2),
-('Jonathan','Smith', 6, 2),
-('Amber', 'Coy', 6, 2),
-('KEI', 'Sibley', 7, 2),
-('Mighty', 'Marlin', 8, 3),
-('Jonathan','Smith', 8, 3),
-('Amber', 'Coy', 9, 3)
+('FRANK', 'Fran', 4, null),
+('Mighty', 'Marlin', 5, 5),
+('Jonathan','Smith', 6, 5),
+('Amber', 'Coy', 6, 5),
+('KEI', 'Sibley', 7, 5),
+('Mighty', 'Marlin', 8, null),
+('Jonathan','Smith', 8, 10),
+('Amber', 'Coy', 9, 10)
 ;
