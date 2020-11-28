@@ -5,10 +5,4 @@ const inquirer = require('inquirer');
 const {addEmployee, addRole, addDepartment,removeEmployee, testHookups} = require('./lib/addRemoveSee');
 const promptMe = require('./lib/prompt');
 
-
-const refresh = function(){
-  promptMe()
-}
 promptMe()
-
-module.exports = refresh
