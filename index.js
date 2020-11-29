@@ -8,9 +8,20 @@ const {promptNewRole, promptGetEmployeeId, promptDepartment, promptManager, prom
 
 
 
-
-
-    
+//END =-------------------
+const endAction = function(){
+    inquirer.prompt([{
+        name: 'nextStep',
+        message: 'Do you want to exit?'
+    }]).then(res => {
+        input = res.nextStep
+        if (input !== 'y'){
+            promptMe()
+            return
+        }
+        connection.end()
+    })
+}
     //--------------------------------------//
     //---------------SEE-------------------//
     //------------------------------------//
@@ -20,7 +31,7 @@ const {promptNewRole, promptGetEmployeeId, promptDepartment, promptManager, prom
         'SELECT * FROM departments', function(err, res) {
           if (err) throw err;
           console.table(res);
-          promptMe()
+          endAction()
         });
     }
     
@@ -30,7 +41,7 @@ const {promptNewRole, promptGetEmployeeId, promptDepartment, promptManager, prom
         'SELECT roles.id, title, salary, departments.department_name FROM roles LEFT JOIN departments ON departments.id = roles.department_id', function(err, res) {
           if (err) throw err;
           console.table(res);
-          promptMe()
+          endAction()
         });
     }
     //EMPLOYEE----------------------------------------------------------------------------------------
@@ -39,7 +50,7 @@ const {promptNewRole, promptGetEmployeeId, promptDepartment, promptManager, prom
         `SELECT employees.id, employees.first_name, employees.last_name, roles.title, departments.department_name, roles.salary, CONCAT(manager.first_name, ' ', manager.last_name) AS manager FROM employees LEFT JOIN roles ON employees.role_id = roles.id LEFT JOIN departments ON roles.department_id = departments.id LEFT JOIN employees manager ON manager.id = employees.manager_id ORDER BY departments.department_name`, function(err, res) {
           if (err) throw err;
           console.table(res);//prity table ^.^
-          promptMe();// this will auto pull me out of mysql
+          endAction();// this will auto pull me out of mysql
         });
     }
     // SELECT employees.id, employees.first_name, employees.last_name, roles.title, departments.department_name, roles.salary, CONCAT(manager.first_name, ' ', manager.last_name) AS manager FROM employees LEFT JOIN roles ON employees.role_id = roles.id LEFT JOIN departments ON roles.department_id = departments.id CROSS JOIN employees manager ON manager.id = employees.manager_id ORDER BY departments.department_name;
@@ -134,7 +145,7 @@ const {promptNewRole, promptGetEmployeeId, promptDepartment, promptManager, prom
             'DELETE FROM employees WHERE ?', {id: employeeD},
           )
           console.log('employee deleted')
-          promptMe()
+          endAction()
       }    
     //--------------------------------------------------//
     //-----------UPDATE EMPLOYEE ROLE------------------//
@@ -152,7 +163,7 @@ const {promptNewRole, promptGetEmployeeId, promptDepartment, promptManager, prom
            const query = connection.query(
              `UPDATE employees SET role_id = ${roleID} WHERE id=${ID}`)
              console.log('updated role')
-             promptMe()
+             endAction()
         }  
       }
 
