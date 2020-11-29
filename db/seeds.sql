@@ -17,7 +17,7 @@ VALUE
 ('Engineer', '40000', 1),
 ('Sr Engineer', '60000', 1),
 ('Legal Manager','50000', 2),
-('lawyer', '20000', 2),
+('Lawyer', '40000', 2),
 ('Secretary', '20000', 2),
 ('Custodial Manager','50000', 3),
 ('Cleaner', '20000', 3),
@@ -26,16 +26,16 @@ VALUE
 
 INSERT INTO employees (first_name, last_name, role_id, manager_id)
 VALUE
-('CAT', 'Striker', 1, null),
+('Cat', 'Striker', 1, NULL),
 ('Katsu', 'Calli', 2, 1),
 ('John', 'Doe', 2, 1),
 ('Manna','May', 3, 1),
-('FRANK', 'Fran', 4, null),
+('Jokinsa', 'Mea', 4, NULL),
 ('Mighty', 'Marlin', 5, 5),
 ('Jonathan','Smith', 6, 5),
 ('Amber', 'Coy', 6, 5),
-('KEI', 'Sibley', 7, 5),
-('Mighty', 'Marlin', 8, null),
+('Kei', 'Sibley', 7, NULL),
+('Damien', 'Pendergast', 8, 10),
 ('Jonathan','Smith', 8, 10),
 ('Amber', 'Coy', 9, 10)
 ;
