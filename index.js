@@ -8,20 +8,20 @@ const {promptNewRole, promptGetEmployeeId, promptDepartment, promptManager, prom
 
 
 
-//END =-------------------
-const endAction = function(){
-    inquirer.prompt([{
-        name: 'nextStep',
-        message: 'Do you want to exit?'
-    }]).then(res => {
-        input = res.nextStep
-        if (input !== 'y'){
-            promptMe()
-            return
-        }
-        connection.end()
-    })
-}
+    //END =-------------------
+    const endAction = function(){
+        inquirer.prompt([{
+            name: 'nextStep',
+            message: 'Do you want to exit?'
+        }]).then(res => {
+            input = res.nextStep
+            if (input !== 'y'){
+                promptMe()
+                return
+            }
+            connection.end()
+        })
+    }
     //--------------------------------------//
     //---------------SEE-------------------//
     //------------------------------------//
@@ -145,7 +145,7 @@ const endAction = function(){
             'DELETE FROM employees WHERE ?', {id: employeeD},
           )
           console.log('employee deleted')
-          endAction()
+          seeEmployees()
       }    
     //--------------------------------------------------//
     //-----------UPDATE EMPLOYEE ROLE------------------//
@@ -163,7 +163,7 @@ const endAction = function(){
            const query = connection.query(
              `UPDATE employees SET role_id = ${roleID} WHERE id=${ID}`)
              console.log('updated role')
-             endAction()
+             seeEmployees()
         }  
       }
 
@@ -179,9 +179,9 @@ async function promptMe() {
             name: 'action',
             message: 'What would you like to do?',
             choices: [
-                'VIEW DEPARTMENTS',
-                'VIEW ROLES', 
                 'VIEW EMPLOYEES',
+                'VIEW ROLES', 
+                'VIEW DEPARTMENTS',
                 //'View Employees by Department',//Optional
                 //'View Employees By Manager',//Optional
                 //,'Update Employee Manager',//Optional
