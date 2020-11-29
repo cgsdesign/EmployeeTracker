@@ -2,25 +2,25 @@
   "name": "employeetracker",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server",
-    "start_mysql": "mysql -u root -p"
+  "start": "node index"
   },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^7.3.3",
+    "mysql2": "^2.2.5"
+  },
+  "bugs": {
+    "url": "https://github.com/cgsdesign/EmployeeTracker/issues"
+  },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cgsdesign/EmployeeTracker.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/cgsdesign/EmployeeTracker/issues"
-  },
-  "homepage": "https://github.com/cgsdesign/EmployeeTracker#readme",
-  "dependencies": {
-    "inquirer": "^7.3.3",
-    "mysql2": "^2.2.5"
-  }
+
+  "homepage": "https://github.com/cgsdesign/EmployeeTracker#readme"
+
 }

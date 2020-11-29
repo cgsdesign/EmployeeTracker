@@ -1,7 +1,9 @@
+//mysql -u root -p
+require('dotenv').config();
 const inquirer = require('inquirer');
-const connection = require('../connect');
-const {addEmployee, addRole, addDepartment, removeEmployee, testHookups, seeDepartments, seeRoles, seeEmployees, updateEmployee} = require('./addRemoveSee');
-const {promptNewRole, promptGetEmployeeId, promptDepartment, promptManager, promptNewEmployee, promptNewDepartment, promptUpdateEmployee} = require("./promptSecondary")
+const connection = require('./connect');
+const {addEmployee, addRole, addDepartment, removeEmployee, testHookups, seeDepartments, seeRoles, seeEmployees, updateEmployee} = require('./lib/addRemoveSee');
+const {promptNewRole, promptGetEmployeeId, promptDepartment, promptManager, promptNewEmployee, promptNewDepartment, promptUpdateEmployee} = require("./lib/promptSecondary")
 
 
 
@@ -127,9 +129,4 @@ async function promptMe() {
      startPrompt()
 
 }
-
-
-
-
-
-module.exports = promptMe
+promptMe()
